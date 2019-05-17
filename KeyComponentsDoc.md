@@ -6,14 +6,21 @@
 
 ## Magic Box Chart
 
-![alt text](linkToImage)
+![alt text](magicBoxChart.jpg)
 
 <!-- Think through the process as much as makes sense, and then create a magic box chart with the whiteboard and place it here. -->
 
 ## Explanation of Design
 <!-- Add explanation of the Magic Boxes image above. Answers to the prompts below may also be appropriate to include here. -->
+1. Read in the CSV file and convert to string
+2. Parse the string into an array of city objects using d3-dsv.  Each object will have 4 keys: "Country Name," "State Name," "Name," and "Population"
+3. Convert the array of city objects into an array of country objects using, array.reduce()
+4. Sort by country, state, and population
+5. Convert country object array into json using JSON.stringify()
+6. Save the JSON data into a json type file of the same name of the CSV file
 
 ### Used Libraries
+- d3-dsv (https://www.npmjs.com/package/d3-dsv)
 
 ## Things to Consider Before Getting Project Approved
 - Are there any approved libraries that I can use? [Link to Approved Library List]
@@ -29,7 +36,9 @@
 - What is the definition of done for my learning process
 - How do I measure the progress of learning
 - Is there a deliverable that can be created during the learning process?
-
+-----
+- Read d3-dsv documentation
+- Learn how to save a file to the same directory as the processed file
 -----
 
 #### *Preliminary Design Approved By:* 

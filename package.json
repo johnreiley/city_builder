@@ -8,6 +8,7 @@
     "scripts": {},
     "devDependencies": {},
     "dependencies": {
-        "d3-dsv": "^1.1.1"
+        "d3-dsv": "^1.1.1",
+        "strip-bom": "^4.0.0"
     }
 }
