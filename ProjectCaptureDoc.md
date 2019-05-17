@@ -129,7 +129,8 @@ A JSON with city objects in the following format:
 ---
 
 #### General Requirements
-This tool will convert a CSV file into a JSON file using a CLI (command line interface) that takes the CSV file as a parameter and save the JSON file next to the file that was converted.
+- This tool will convert a CSV file into a JSON file using a global CLI (command line interface)
+- Takes the CSV file as a parameter and save the JSON file next to the file that was converted.
 <!-- This tool shall help Brother John Doe and his students...TODO -->
 <!-- TODO: -->
 
@@ -147,9 +148,8 @@ Globally installed Node.js CLI
 # Communication Plan
 
 ### Timeline
-- Milestone 1: 
-- Milestone 2: 
-- Milestone 3: 
+- Milestone 1: Finish design and prototype (3/21)
+- Milestone 2: Deliver the project (3/24)
 <!-- Include Milestone List here with Deadlines and try to make each milestone a minimum viable product
 - Milestone 1: Finish Design (3/19)
 - Milestone 2: Build Core logic to search for words in syllabi (3/22)
@@ -166,7 +166,7 @@ Email: markfrommarketing@byui.edu
 <!-- e.g. May 4th, 2019 -->
 
 ### Action Items
-- Create a prototype of the tool.
+- Create a design and prototype of the tool.
 <!-- Recap Meeting -->
 
 #### TechOps
