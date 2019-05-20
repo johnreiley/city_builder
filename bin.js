@@ -1,8 +1,24 @@
-const { main } = require('./main.js');
+const {
+  main
+} = require('./main.js');
+const fs = require('fs');
+const d3 = require('d3-dsv');
+const stripBom = require('strip-bom');
 
 function getInput() {
-  var input;
-  // How to get input, eg. from file, commandline, inquierer, etc.
+  // Read in the file and turn the string into arary of city objects
+  let input = fs.readFileSync(process.argv[2]).toString();
+  stripBom(input);
+
+  input = d3.csvParse(input, function (d) {
+    return {
+      country: d["Country Name"],
+      state: d["State Name"],
+      name: d["Name"],
+      population: d["Population"]
+    };
+  });
+
   return input;
 }
 
@@ -11,14 +27,17 @@ function makeOutput(output) {
   return;
 }
 
-function handleError(error){
+function handleError(error) {
   console.error(error);
 }
 
-try{
+try {
   const input = getInput();
   const mainOutput = main(input);
+  // ---------------------
+  console.log(mainOutput);
+
   makeOutput(mainOutput);
-} catch(error){
+} catch (error) {
   handleError(error);
 }
