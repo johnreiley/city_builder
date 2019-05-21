@@ -17,7 +17,7 @@ function convert(inputArray) {
                 }]
             });
         } else {
-            let stateObj = countryObj.states.find(obj2 => obj2.name === obj.state)
+            let stateObj = countryObj.states.find(obj2 => obj2.name === obj.state);
             if (stateObj === undefined) {
                 // build the new state
                 countryObj.states.push({
@@ -26,13 +26,13 @@ function convert(inputArray) {
                         name: obj.name,
                         population: Number(obj.population)
                     }]
-                })
+                });
             } else {
                 // build the new city
                 stateObj.cities.push({
                     name: obj.name,
                     population: Number(obj.population)
-                })
+                });
             }
         }
         return targetArray;
@@ -42,21 +42,27 @@ function convert(inputArray) {
 }
 
 function sortArray(arrayToSort) {
-    let sortedArray = arrayToSort.sort((a, b) => {
-        a.states.sort((c, d) => {
-            if (c.name >= d.name) return 1;
+
+    let sortedArray = arrayToSort.map(countryObj => {
+        countryObj.states = countryObj.states.map(stateObj => {
+            stateObj.cities = stateObj.cities.sort((city1, city2) => {
+                if (city1.population >= city2.population) return 1;
+                else return -1;
+            });
+            return stateObj;
+        }).sort((state1, state2) => {
+            if (state1.name >= state2.name) return 1;
             else return -1;
         });
-        if (a.name >= b.name) return 1;
+        return countryObj;
+    }).sort((country1, country2) => {
+        if (country1.name >= country2.name) return 1;
         else return -1;
     });
-
-    // TODO: Sort the cities!!
-
     return sortedArray;
 }
 
-function displayCountries(countries) {
+function logCountries(countries) {
     countries.forEach(country => {
         country.states.forEach(state => {
             state.cities.forEach(city => {
@@ -69,7 +75,7 @@ function displayCountries(countries) {
 function main(inputArray) {
     let outputArray = convert(inputArray);
     outputArray = sortArray(outputArray);
-    displayCountries(outputArray);
+    logCountries(outputArray);
     return outputArray;
 }
 

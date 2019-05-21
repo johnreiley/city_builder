@@ -24,6 +24,13 @@ function getInput() {
 
 function makeOutput(output) {
   // How to output data, eg. to csv, to json, to console, etc.
+  let jsonOutput = JSON.stringify(output);
+  let savePath = process.argv[2]
+    .slice(0, (process.argv[2].length - 3))
+    .concat("json");
+
+  fs.writeFileSync(savePath, jsonOutput);
+
   return;
 }
 
