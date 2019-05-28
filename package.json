@@ -1,14 +1,27 @@
 {
-    "name": "city-builder",
-    "version": "1.0.0",
-    "license": "MIT",
-    "bin": {
-        "city-builder": "bin/city-builder"
-    },
-    "scripts": {},
-    "devDependencies": {},
-    "dependencies": {
-        "d3-dsv": "^1.1.1",
-        "strip-bom": "^4.0.0"
-    }
+  "name": "city_builder",
+  "version": "1.0.0",
+  "description": "Build the city of hope!",
+  "main": "bin.js",
+  "dependencies": {
+    "d3-dsv": "^1.1.1",
+    "strip-bom": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/supermormon/city_builder.git"
+  },
+  "author": "John Reiley",
+  "license": "MIT",
+  "bin": {
+    "city-builder": "bin/city-builder"
+  },
+  "bugs": {
+    "url": "https://github.com/supermormon/city_builder/issues"
+  },
+  "homepage": "https://github.com/supermormon/city_builder#readme"
 }

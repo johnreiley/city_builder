@@ -62,20 +62,9 @@ function sortArray(arrayToSort) {
     return sortedArray;
 }
 
-function logCountries(countries) {
-    countries.forEach(country => {
-        country.states.forEach(state => {
-            state.cities.forEach(city => {
-                console.log(`Name:${city.name}, Population:${city.population}`)
-            })
-        })
-    });
-}
-
 function main(inputArray) {
     let outputArray = convert(inputArray);
     outputArray = sortArray(outputArray);
-    logCountries(outputArray);
     return outputArray;
 }
 
