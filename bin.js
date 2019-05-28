@@ -15,7 +15,7 @@ function getInput() {
       country: d["Country Name"],
       state: d["State Name"],
       name: d["Name"],
-      population: d["Population"]
+      population: Number(d["Population"])
     };
   });
 
@@ -42,8 +42,6 @@ try {
   const input = getInput();
   const mainOutput = main(input);
   // ---------------------
-  console.log(mainOutput);
-
   makeOutput(mainOutput);
 } catch (error) {
   handleError(error);

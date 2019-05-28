@@ -6,35 +6,28 @@ function convert(inputArray) {
         let countryObj = targetArray.find(obj2 => obj2.name === obj.country);
         if (countryObj === undefined) {
             // build the new country
-            targetArray.push({
+            countryObj = {
                 name: obj.country,
-                states: [{
-                    name: obj.state,
-                    cities: [{
-                        name: obj.name,
-                        population: Number(obj.population)
-                    }]
-                }]
-            });
-        } else {
-            let stateObj = countryObj.states.find(obj2 => obj2.name === obj.state);
-            if (stateObj === undefined) {
-                // build the new state
-                countryObj.states.push({
-                    name: obj.state,
-                    cities: [{
-                        name: obj.name,
-                        population: Number(obj.population)
-                    }]
-                });
-            } else {
-                // build the new city
-                stateObj.cities.push({
-                    name: obj.name,
-                    population: Number(obj.population)
-                });
+                states: []
             }
+            targetArray.push(countryObj);
         }
+        let stateObj = countryObj.states.find(obj2 => obj2.name === obj.state);
+        if (stateObj === undefined) {
+            // build the new state
+            stateObj = {
+                name: obj.state,
+                cities: []
+            }
+            countryObj.states.push(stateObj);
+        }
+        // build the new city
+        stateObj.cities.push({
+            name: obj.name,
+            population: obj.population
+        });
+
+
         return targetArray;
     }, []);
 
