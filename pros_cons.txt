@@ -1,0 +1,23 @@
+My Solution
+-----------
+
+Pros
+- implements the plus sign design
+- more visual
+
+Cons
+- lots of if else statements
+
+
+
+
+
+Josh's Solution
+---------------
+
+Pros
+- very functional
+- much shorter
+- combines the sort and the array creation
+
+Cons
